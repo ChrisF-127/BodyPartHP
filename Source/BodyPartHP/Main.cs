@@ -46,7 +46,7 @@ namespace BodyPartHP
 					baseHP,
 					Validators.IntRangeValidator(1, int.MaxValue));
 				handle.SpinnerIncrement = 1;
-				handle.OnValueChanged = val => bodyPartDef.hitPoints = val;
+				handle.ValueChanged += val => bodyPartDef.hitPoints = (SettingHandle<int>)val;
 
 				// apply loaded settings
 				bodyPartDef.hitPoints = handle;
