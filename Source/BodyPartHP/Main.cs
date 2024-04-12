@@ -19,17 +19,17 @@ namespace BodyPartHP
 			//harmony.PatchAll();
 		}
 
-		private List<SettingHandle> _settingHandles = new List<SettingHandle>();
+		private readonly List<SettingHandle> _settingHandles = new List<SettingHandle>();
 
 		public override void DefsLoaded()
 		{
 			// hitpoint reduction warning label
-			var warningHandle = Settings.GetHandle("WarningLabel", "HitPoint-Reduction-Warning", "WARNING! Reduction of hitpoints can cause loss of bodyparts and death!", false);
+			var warningHandle = Settings.GetHandle("WarningLabel", "HitPoint-Reduction-Warning", "WARNING! Reduction of hitpoints may cause loss of bodyparts and death!", false);
 			warningHandle.Unsaved = true;
 			warningHandle.CustomDrawerFullWidth = rect => CustomDrawerFullWidth_Label(rect, warningHandle.Description, Color.red, TextAnchor.MiddleCenter, FontStyle.Bold);
 
 			// body part hitpoint settings
-			List<string> partOf = new List<string>();
+			var partOf = new List<string>();
 			foreach (var bodyPartDef in DefDatabase<BodyPartDef>.AllDefsListForReading)
 			{
 				// local variables
@@ -55,7 +55,7 @@ namespace BodyPartHP
 
 				foreach (var def in DefDatabase<ThingDef>.AllDefsListForReading)
 				{
-					if (def?.race?.body?.AllParts?.FirstOrDefault((p) => p?.def?.defName == defName) != null)
+					if (def?.race?.body?.AllParts?.FirstOrDefault(p => p?.def?.defName == defName) != null)
 						partOf.Add(def.label.CapitalizeFirst());
 				}
 				partOf.Sort();
@@ -64,7 +64,7 @@ namespace BodyPartHP
 			}
 
 			// sort list
-			_settingHandles.SortBy((s) => s.Title);
+			_settingHandles.SortBy(s => s.Title);
 
 			// sort body part list by title
 			for (int i = 0; i < _settingHandles.Count; i++)
