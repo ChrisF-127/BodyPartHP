@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -38,21 +38,18 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
+    <Compile Include="BodyPartHPSettings.cs" />
+    <Compile Include="BodyPartHP.cs" />
+    <Compile Include="ControlsBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.5.4062</Version>
+      <Version>1.6.4518</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <ExcludeAssets>runtime</ExcludeAssets>
-      <Version>2.3.3</Version>
-      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="UnlimitedHugs.Rimworld.HugsLib">
-      <ExcludeAssets>runtime</ExcludeAssets>
-      <Version>11.0.3</Version>
+      <Version>2.3.6</Version>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
@@ -66,6 +63,6 @@ exit /b 1
 )
 
 set dir=$(TargetDir)
-if "x!dir:RimWorld\Mods=!"=="x%25dir%25" D:\0Stuff\RimWorld\_mods\_deploy.bat $(TargetName)</PostBuildEvent>
+if "x!dir:RimWorld\Mods=!"=="x%25dir%25" D:\0Stuff\2Games\RimWorld\_mods\_deploy.bat $(TargetName)</PostBuildEvent>
   </PropertyGroup>
 </Project>

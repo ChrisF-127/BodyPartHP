@@ -8,19 +8,10 @@
 		<li>1.3</li>
 		<li>1.4</li>
 		<li>1.5</li>
+		<li>1.6</li>
 	</supportedVersions>
 	<packageId>Syrus.BodyPartHP</packageId>
 	<description>Allows changing the hitpoints of every body part used in the game.</description>
-
-	<modDependencies>
-		<li>
-			<packageId>UnlimitedHugs.HugsLib</packageId>
-			<displayName>HugsLib</displayName>
-			<downloadUrl>https://github.com/UnlimitedHugs/RimworldHugsLib/releases/latest</downloadUrl>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/818773962</steamWorkshopUrl>
-		</li>
-	</modDependencies>
-	<loadAfter>
-		<li>UnlimitedHugs.HugsLib</li>
-	</loadAfter>
+	<modDependencies></modDependencies>
+	<loadAfter></loadAfter>
 </ModMetaData>
